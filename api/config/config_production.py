@@ -1,1 +1,3 @@
-DEBUG = False
+config_prod = {
+    'DEBUG': False,
+}

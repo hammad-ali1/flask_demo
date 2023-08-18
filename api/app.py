@@ -1,6 +1,8 @@
 from flask import Flask
 from dotenv import load_dotenv
 import os
+from config.config_development import config_dev
+from config.config_production import config_prod
 
 load_dotenv()
 
@@ -8,9 +10,9 @@ app = Flask(__name__)
 
 # Load config
 if os.environ.get('MODE') == 'DEVELOPMENT':
-    app.config.from_object('config.config_development')
+    app.config.update(**config_dev)
 elif os.environ.get('MODE') == 'PRODUCTION':
-    app.config.from_object('config.config_production')
+    app.config.from_object(**config_prod)
 
 
 @app.route("/")

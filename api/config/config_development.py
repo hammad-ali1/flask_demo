@@ -1,1 +1,3 @@
-DEBUG = True
+config_dev = {
+    'DEBUG': True,
+}
