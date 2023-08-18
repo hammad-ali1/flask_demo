@@ -1,8 +1,8 @@
 from flask import Flask
 from dotenv import load_dotenv
 import os
-from config.config_development import config_dev
-from config.config_production import config_prod
+from config.dev import config_dev
+from config.prod import config_prod
 
 load_dotenv()
 
