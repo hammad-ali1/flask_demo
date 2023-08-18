@@ -12,7 +12,7 @@ app = Flask(__name__)
 if os.environ.get('MODE') == 'DEVELOPMENT':
     app.config.update(**config_dev)
 elif os.environ.get('MODE') == 'PRODUCTION':
-    app.config.from_object(**config_prod)
+    app.config.update(**config_prod)
 
 
 @app.route("/")
